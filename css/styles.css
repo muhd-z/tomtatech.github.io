@@ -73,34 +73,6 @@ section {
 #home h1 {
    font-weight: 700;
    position: relative;
-   color: #11245A;
-   -webkit-text-stroke: 0.3vw #383d52;
-   text-transform: uppercase;
-}
-
-#home h1::before{
-   content: attr(data-text);
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 0;
-   height: 100%;
-   color: white;
-   -webkit-text-stroke: #383d52;
-   border-right: 2px solid white;
-   overflow: hidden;
-   animation: animate 6s linear infinite;
-
-}
-
-@keyframes animate{
-   0%,10%,100%{
-      width: 0;
-   }
-   70%,90%
-   {
-      width: 100%;
-   }
 }
 
 #home p {
