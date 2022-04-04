@@ -8,16 +8,13 @@
     <!-- Bootstrap CSS -->
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/boxicons.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-
-    
 
     <title>Tomta Technology</title>
   </head>
   <body data-bs-spy="scroll" data-bs-target=".navbar">
-    
+
    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
       <div class="container">
         <a class="navbar-brand logo-text" href="#">Tomta</a>
@@ -63,7 +60,7 @@
    </section>
 
    <section id="services">
-      <div class="container">
+      <div class="container reveal">
          <div class="row">
             <div class="col-12 section-intro">
                <h1>Our Services</h1>
@@ -76,7 +73,7 @@
    </section>
 
    <section id="services" class="row g-0 py-0">
-      <div class="col-lg-4 col-sm-6">
+      <div class="col-lg-4 col-sm-6 reveal">
          <div class="portfolio-item">
                <img src="img/p1.jpg" alt="">
                <div class="portfolio-overlay">
@@ -87,7 +84,7 @@
                </div>
          </div>
       </div>
-      <div class="col-lg-4 col-sm-6">
+      <div class="col-lg-4 col-sm-6 reveal">
          <div class="portfolio-item">
                <img src="img/p2.jpg" alt="">
                <div class="portfolio-overlay">
@@ -98,7 +95,7 @@
                </div>
          </div>
       </div>
-      <div class="col-lg-4 col-sm-6">
+      <div class="col-lg-4 col-sm-6 reveal">
          <div class="portfolio-item">
                <img src="img/p3.jpg" alt="">
                <div class="portfolio-overlay">
@@ -113,7 +110,7 @@
    </section>
 
    <section id="features">
-      <div class="container">
+      <div class="container reveal">
          <div class="row">
             <div class="col-12 section-intro">
                <h1>Our Features</h1>
@@ -180,7 +177,7 @@
    </section>
 
    <section id="team" class="row g-0 py-0 text-center">
-      <div class="col-lg-3 col-sm-6 team-member">
+      <div class="col-lg-3 col-sm-6 team-member reveal">
          <div class="team-member-img">
             <img src="img/char.webp" alt="">
             <div class="social-icons">
@@ -197,7 +194,7 @@
             <p class="text-white">Well skillful lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
          </div>
       </div>
-      <div class="col-lg-3 col-sm-6 team-member even">
+      <div class="col-lg-3 col-sm-6 team-member even reveal">
          <div class="team-member-img">
             <img src="img/dark.png" alt="">
             <div class="social-icons">
@@ -214,7 +211,7 @@
             <p class="text-white">Well skillful lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
          </div>
       </div>
-      <div class="col-lg-3 col-sm-6 team-member">
+      <div class="col-lg-3 col-sm-6 team-member reveal">
          <div class="team-member-img">
             <img src="img/blast.png" alt="">
             <div class="social-icons">
@@ -231,7 +228,7 @@
             <p class="text-white">Well skillful lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
          </div>
       </div>
-      <div class="col-lg-3 col-sm-6 team-member even">
+      <div class="col-lg-3 col-sm-6 team-member even reveal">
          <div class="team-member-img">
             <img src="img/mew2.webp" alt="">
             <div class="social-icons">
@@ -251,7 +248,7 @@
    </section>
 
    <section id="testimonials" class="text-center">
-      <div class="container">
+      <div class="container reveal">
          <div class="row">
             <div class="col-12">
 
@@ -352,8 +349,8 @@
    </section>
    -->
 
-   <section id="contact">
-      <div class="container">
+   <section id="contact reveal">
+      <div class="container reveal">
          <div class="row align-items-center">
             <div class="col-lg-4">
                <img src="img/cntct.jpg" alt="">
@@ -383,7 +380,7 @@
    </section>
 
    <section id="cta" class="py-5">
-      <div class="container py-4">
+      <div class="container py-4 reveal">
          <div class="row justify-content-center">
             <div class="col-md-6">
                <h3 class="text-white">The power to Automate</h3>
@@ -394,6 +391,14 @@
          </div>
       </div>
    </section>
+
+   <button
+   type="button"
+   class="btn btn-danger btn-floating btn-lg"
+   id="btn-back-to-top"
+   >
+   <i class='bx bx-up-arrow-alt'></i>
+   </button>
 
    <footer>
       <div class="footer-top">
@@ -458,6 +463,27 @@
 
     <!-- Optional JavaScript; choose one of the two! -->
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/simple.js"></script>
+    <script type="text/javascript">
+       window.addEventListener('scroll', reveal);
+
+       function reveal(){
+          var reveals = document.querySelectorAll('.reveal');
+
+          for(var i = 0; i < reveals.length; i++){
+             var windowheight = window.innerHeight;
+             var revealtop = reveals[i].getBoundingClientRect().top;
+             var revealpoint = 150;
+
+             if(revealtop < windowheight - revealpoint){
+                reveals[i].classList.add('active');
+             }
+             else{
+                reveals[i].classList.remove('active');
+             }
+          }
+       }
+    </script>
     
   </body>
 </html>
